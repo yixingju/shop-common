@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 创建连接数据库的配置文件 -->
+<!-- 从http://www.mybatis.org粘贴以下内容 -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 延迟加载 -->
+<settings>
+	<!-- 
+		lazyLoadingEnabled:延迟加载的全局开关。
+						当开启时，所有关联对象都会延迟加载.
+						 特定关联关系中可通过设置fetchType属性来覆盖该项的开关状态。
+						 默认为false(关闭),true为开启
+		aggressiveLazyLoading:当开启时，任何方法的调用都会加载该对象的所有属性。
+							否则，每个属性会按需加载（参考lazyLoadTriggerMethods).
+							默认为false (true in ≤3.4.1:当版本在小于等于3.4.1时开启),
+							true为手动开启
+	 -->
+	<setting name="lazyLoadingEnabled" value="true"/>
+	<setting name="aggressiveLazyLoading" value="false"/>
+</settings>
+<!-- 为类的完整路径名取别名 -->
+<typeAliases>
+	<typeAlias type="com.pb.pojo.Brand" alias="Brand"/>
+</typeAliases>
+  <mappers>
+  	<!-- resource值为映射文件的完整路径名 -->
+    <mapper resource="com/pb/Mapper/BrandMapper.xml"/>
+  </mappers>
+</configuration>
