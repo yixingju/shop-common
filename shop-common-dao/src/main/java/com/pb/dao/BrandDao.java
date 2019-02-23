@@ -4,7 +4,7 @@ import com.pb.pojo.Brand;
 
 import java.util.List;
 
-public interface BrandDao {
+public interface BrandDao  {
 
 
     List<Brand> findAll();
